@@ -9,9 +9,9 @@ __pycache__
 frontend/node_modules
 frontend/dist
 frontend/.vite_cache
-docs
-prompts
-database_backups
-scripts
+/docs
+/prompts
+/database_backups
+/scripts
 backend/tests
 backend/uploads

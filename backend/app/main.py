@@ -144,7 +144,7 @@ def api_root_index(db: Session = Depends(get_db)):
         "status": "online",
         "service": "NexusLMS Enterprise REST API v1.0",
         "database": db_status,
-        "database_engine": "MySQL 8+ (SQLAlchemy 2.x ORM)",
+        "database_engine": "SQLite 3 (Serverless SQLAlchemy 2.x ORM)" if "sqlite" in str(settings.DATABASE_URL).lower() else "MySQL 8+ (SQLAlchemy 2.x ORM)",
         "documentation": {
             "swagger_ui": "/docs",
             "redoc": "/redoc",

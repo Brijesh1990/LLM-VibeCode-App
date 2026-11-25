@@ -1,0 +1,569 @@
+{
+  "info": {
+    "_postman_id": "b7e92c14-4d8a-4e2f-9a10-31a829c01922",
+    "name": "Enterprise LMS REST API v1 (22 Modules)",
+    "description": "Complete Postman Collection v2.1 for the Enterprise Learning Management System (FastAPI + SQLAlchemy 2.x + MySQL 8). Covers all 22 API modules across Admin, Instructor, Student, and Public roles.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000",
+      "type": "string"
+    },
+    {
+      "key": "access_token",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "refresh_token",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{access_token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "item": [
+    {
+      "name": "01. Auth",
+      "item": [
+        {
+          "name": "Login (Obtain Access & Refresh Tokens)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@lms.edu\",\n  \"password\": \"Admin@123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "auth", "login"]
+            }
+          }
+        },
+        {
+          "name": "Refresh Access Token",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refresh_token\": \"{{refresh_token}}\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/auth/refresh",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "auth", "refresh"]
+            }
+          }
+        },
+        {
+          "name": "Logout (Revoke Refresh Token)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refresh_token\": \"{{refresh_token}}\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/auth/logout",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "auth", "logout"]
+            }
+          }
+        },
+        {
+          "name": "Get Current User Profile (/auth/me)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/auth/me",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "auth", "me"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "02. Users",
+      "item": [
+        {
+          "name": "List Users (Admin)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/users?page=1&page_size=20",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "users"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "page_size", "value": "20" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create User (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"full_name\": \"Rohan Verma\",\n  \"email\": \"rohan.verma@lms.edu\",\n  \"phone\": \"+91-9876543210\",\n  \"password\": \"Student@123\",\n  \"role_name\": \"STUDENT\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/users",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "users"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "03. Students & 04. Instructors",
+      "item": [
+        {
+          "name": "List Students",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/students",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "students"]
+            }
+          }
+        },
+        {
+          "name": "List Instructors",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/instructors",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "instructors"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "05. Categories & 06. Courses",
+      "item": [
+        {
+          "name": "List Categories",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/categories",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "categories"]
+            }
+          }
+        },
+        {
+          "name": "List Courses",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/courses",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "courses"]
+            }
+          }
+        },
+        {
+          "name": "Create Course (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"category_id\": 1,\n  \"code\": \"CS-FS101\",\n  \"title\": \"Full-Stack Web Development with React 19 & FastAPI\",\n  \"level\": \"INTERMEDIATE\",\n  \"duration_weeks\": 12,\n  \"base_fee\": 1200.00,\n  \"status\": \"PUBLISHED\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/courses",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "courses"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "07. Batches & 08. Enrollments",
+      "item": [
+        {
+          "name": "List Batches",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/batches",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "batches"]
+            }
+          }
+        },
+        {
+          "name": "Create Batch (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"course_id\": 1,\n  \"instructor_id\": 2,\n  \"batch_code\": \"FSWD-2026A\",\n  \"name\": \"Full-Stack Cohort 2026-A\",\n  \"start_date\": \"2026-01-10\",\n  \"end_date\": \"2026-04-10\",\n  \"schedule_days\": \"Mon,Wed,Fri\",\n  \"time_slot\": \"10:00 AM - 12:00 PM\",\n  \"max_capacity\": 30\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/batches",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "batches"]
+            }
+          }
+        },
+        {
+          "name": "Enroll Student in Batch",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"student_id\": 3,\n  \"course_id\": 1,\n  \"batch_id\": 1,\n  \"total_fee\": 1200.00,\n  \"discount_amount\": 100.00\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/enrollments",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "enrollments"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "09. Lectures, 10. Materials & 11. Progress",
+      "item": [
+        {
+          "name": "List Lectures",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/lectures?course_id=1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "lectures"],
+              "query": [{ "key": "course_id", "value": "1" }]
+            }
+          }
+        },
+        {
+          "name": "List Study Materials",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/materials?course_id=1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "materials"],
+              "query": [{ "key": "course_id", "value": "1" }]
+            }
+          }
+        },
+        {
+          "name": "Record Lecture Progress Heartbeat",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"watch_time_seconds\": 1440,\n  \"last_position_seconds\": 1440,\n  \"is_completed\": true\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/progress/lectures/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "progress", "lectures", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "12. Assignments & 13. Submissions",
+      "item": [
+        {
+          "name": "List Assignments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/assignments?course_id=1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "assignments"],
+              "query": [{ "key": "course_id", "value": "1" }]
+            }
+          }
+        },
+        {
+          "name": "Submit Assignment (Student)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"assignment_id\": 1,\n  \"submission_text\": \"Implemented JWT authentication with refresh rotation.\",\n  \"file_url\": \"/uploads/submissions/jwt_project.zip\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/submissions",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "submissions"]
+            }
+          }
+        },
+        {
+          "name": "Grade Submission (Instructor/Admin)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"marks_obtained\": 92.0,\n  \"feedback_text\": \"Excellent implementation of token reuse detection.\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/submissions/1/grade",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "submissions", "1", "grade"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "14. Quizzes & 15. Timed Quiz Attempts",
+      "item": [
+        {
+          "name": "List Quizzes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/quizzes?course_id=1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "quizzes"],
+              "query": [{ "key": "course_id", "value": "1" }]
+            }
+          }
+        },
+        {
+          "name": "Start Timed Quiz Attempt",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/quizzes/1/start",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "quizzes", "1", "start"]
+            }
+          }
+        },
+        {
+          "name": "Submit Timed Quiz Attempt",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"answers\": [\n    { \"question_id\": 1, \"selected_option_id\": 2 },\n    { \"question_id\": 2, \"selected_option_id\": 5 }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/quizzes/attempts/1/submit",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "quizzes", "attempts", "1", "submit"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "16. Attendance",
+      "item": [
+        {
+          "name": "Mark Bulk Batch Attendance",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"batch_id\": 1,\n  \"attendance_date\": \"2026-11-25\",\n  \"records\": [\n    { \"student_id\": 3, \"status\": \"PRESENT\", \"remarks\": \"On time\" }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/attendance/bulk",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "attendance", "bulk"]
+            }
+          }
+        },
+        {
+          "name": "Get Batch Attendance Summary",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/attendance/summary/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "attendance", "summary", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "17. Certificates & Public Verification",
+      "item": [
+        {
+          "name": "Issue Certificate (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"enrollment_id\": 1\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/certificates/issue",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "certificates", "issue"]
+            }
+          }
+        },
+        {
+          "name": "Public Verify Certificate by Code",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/certificates/verify/CERT-2026-FSWD-0001",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "certificates", "verify", "CERT-2026-FSWD-0001"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "18. Payments & Fee Receipts",
+      "item": [
+        {
+          "name": "Record Fee Installment Payment",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"enrollment_id\": 1,\n  \"amount\": 500.00,\n  \"payment_method\": \"UPI\",\n  \"transaction_ref\": \"UTR9988776655\",\n  \"remarks\": \"Installment 1\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/payments",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "payments"]
+            }
+          }
+        },
+        {
+          "name": "List Pending Fee Defaulters",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/payments/pending",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "payments", "pending"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "19. Notifications, 20. Announcements, 21. Reports & 22. Health",
+      "item": [
+        {
+          "name": "List User Notifications",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/notifications",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "notifications"]
+            }
+          }
+        },
+        {
+          "name": "List Announcements",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/announcements",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "announcements"]
+            }
+          }
+        },
+        {
+          "name": "Get Role Dashboard KPI Report",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/reports/dashboard",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "reports", "dashboard"]
+            }
+          }
+        },
+        {
+          "name": "Get System Settings",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/settings",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "settings"]
+            }
+          }
+        },
+        {
+          "name": "Health Check (/api/v1/health)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/health",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "health"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

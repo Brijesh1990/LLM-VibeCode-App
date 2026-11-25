@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 620" fill="none">
+  <defs>
+    <linearGradient id="heroGrad" x1="0" y1="0" x2="920" y2="620" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="55%" stop-color="#1E1B4B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <linearGradient id="accentPill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="50%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Main Dashboard Frame -->
+  <rect x="20" y="20" width="880" height="580" rx="28" fill="url(#heroGrad)" stroke="#334155" stroke-width="2"/>
+  <!-- Top Browser Bar -->
+  <rect x="20" y="20" width="880" height="52" rx="28" fill="#1E293B"/>
+  <circle cx="54" cy="46" r="7" fill="#EF4444"/>
+  <circle cx="76" cy="46" r="7" fill="#F59E0B"/>
+  <circle cx="98" cy="46" r="7" fill="#16A34A"/>
+  <rect x="240" y="33" width="440" height="26" rx="8" fill="#0F172A"/>
+  <text x="335" y="50" fill="#94A3B8" font-family="monospace" font-size="12">https://nexuslms.edu/admin/dashboard</text>
+  <circle cx="855" cy="46" r="12" fill="url(#accentPill)"/>
+
+  <!-- Sidebar Preview -->
+  <rect x="36" y="88" width="175" height="492" rx="18" fill="#0F172A" stroke="#1E293B"/>
+  <rect x="54" y="110" width="138" height="34" rx="10" fill="url(#accentPill)"/>
+  <text x="72" y="132" fill="#FFFFFF" font-family="sans-serif" font-size="13" font-weight="bold">Executive KPIs</text>
+  <rect x="54" y="158" width="120" height="12" rx="6" fill="#334155"/>
+  <rect x="54" y="186" width="135" height="12" rx="6" fill="#334155"/>
+  <rect x="54" y="214" width="110" height="12" rx="6" fill="#334155"/>
+  <rect x="54" y="242" width="128" height="12" rx="6" fill="#334155"/>
+  <rect x="54" y="270" width="104" height="12" rx="6" fill="#334155"/>
+  <rect x="54" y="485" width="138" height="75" rx="14" fill="#1E293B" stroke="#334155"/>
+  <text x="70" y="514" fill="#38BDF8" font-family="sans-serif" font-size="12" font-weight="bold">MySQL 8.0 Live</text>
+  <text x="70" y="534" fill="#94A3B8" font-family="sans-serif" font-size="11">31 Tables Synced</text>
+
+  <!-- KPI Row -->
+  <rect x="230" y="88" width="205" height="105" rx="18" fill="#1E293B" stroke="#334155"/>
+  <text x="252" y="118" fill="#94A3B8" font-family="sans-serif" font-size="12" font-weight="bold">ACTIVE SCHOLARS</text>
+  <text x="252" y="156" fill="#FFFFFF" font-family="sans-serif" font-size="30" font-weight="900">2,480+</text>
+  <text x="252" y="178" fill="#10B981" font-family="sans-serif" font-size="12" font-weight="bold">▲ +24.8% This Cohort</text>
+
+  <rect x="450" y="88" width="205" height="105" rx="18" fill="#1E293B" stroke="#334155"/>
+  <text x="472" y="118" fill="#94A3B8" font-family="sans-serif" font-size="12" font-weight="bold">COURSE COMPLETION</text>
+  <text x="472" y="156" fill="#38BDF8" font-family="sans-serif" font-size="30" font-weight="900">94.2%</text>
+  <text x="472" y="178" fill="#A855F7" font-family="sans-serif" font-size="12" font-weight="bold">★ Verified ReportLab PDFs</text>
+
+  <rect x="670" y="88" width="210" height="105" rx="18" fill="#1E293B" stroke="#334155"/>
+  <text x="692" y="118" fill="#94A3B8" font-family="sans-serif" font-size="12" font-weight="bold">REVENUE &amp; RECEIPTS</text>
+  <text x="692" y="156" fill="#10B981" font-family="sans-serif" font-size="30" font-weight="900">$148.5K</text>
+  <text x="692" y="178" fill="#CBD5E1" font-family="sans-serif" font-size="12" font-weight="bold">Automated Fee Ledger</text>
+
+  <!-- Analytics Chart Card -->
+  <rect x="230" y="212" width="425" height="225" rx="20" fill="#1E293B" stroke="#334155"/>
+  <text x="256" y="245" fill="#FFFFFF" font-family="sans-serif" font-size="15" font-weight="bold">Enrollment &amp; Performance Velocity (Recharts)</text>
+  <rect x="266" y="340" width="34" height="65" rx="6" fill="url(#barGrad)"/>
+  <rect x="322" y="315" width="34" height="90" rx="6" fill="url(#barGrad)"/>
+  <rect x="378" y="290" width="34" height="115" rx="6" fill="url(#barGrad)"/>
+  <rect x="434" y="305" width="34" height="100" rx="6" fill="url(#barGrad)"/>
+  <rect x="490" y="272" width="34" height="133" rx="6" fill="url(#barGrad)"/>
+  <rect x="546" y="255" width="34" height="150" rx="6" fill="#10B981"/>
+  <path d="M 280 335 Q 360 285 440 295 T 565 248" stroke="#38BDF8" stroke-width="4" fill="none"/>
+
+  <!-- Live Quiz Timer & Security Card -->
+  <rect x="670" y="212" width="210" height="225" rx="20" fill="#1E293B" stroke="#4F46E5" stroke-width="2"/>
+  <text x="692" y="245" fill="#38BDF8" font-family="monospace" font-size="12" font-weight="bold">SERVER-SIDE EXAM ENGINE</text>
+  <circle cx="775" cy="312" r="46" stroke="#4F46E5" stroke-width="8" fill="#0F172A"/>
+  <text x="748" y="318" fill="#FFFFFF" font-family="monospace" font-size="18" font-weight="bold">19:42</text>
+  <text x="694" y="388" fill="#10B981" font-family="sans-serif" font-size="12" font-weight="bold">✓ Anti-Cheat Timestamp</text>
+  <text x="694" y="410" fill="#CBD5E1" font-family="sans-serif" font-size="12">✓ Backend Score Grading</text>
+
+  <!-- Bottom Certificate Banner -->
+  <rect x="230" y="455" width="650" height="125" rx="20" fill="url(#accentPill)"/>
+  <circle cx="290" cy="517" r="34" fill="#FFFFFF" fill-opacity="0.18"/>
+  <text x="275" y="525" fill="#FFFFFF" font-family="sans-serif" font-size="22" font-weight="900">NX</text>
+  <text x="345" y="498" fill="#FFFFFF" font-family="sans-serif" font-size="20" font-weight="900">Instant ReportLab PDF Certificates &amp; Public Verification</text>
+  <text x="345" y="526" fill="#E0F2FE" font-family="sans-serif" font-size="14">Every graduate receives a cryptographically numbered credential verifiable online 24/7.</text>
+  <rect x="345" y="540" width="220" height="24" rx="12" fill="#0F172A" fill-opacity="0.45"/>
+  <text x="360" y="556" fill="#38BDF8" font-family="monospace" font-size="12" font-weight="bold">Verify: CERT-2026-01005-170B9E</text>
+</svg>

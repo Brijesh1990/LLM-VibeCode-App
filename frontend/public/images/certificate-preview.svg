@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 560" fill="none">
+  <rect width="840" height="560" rx="24" fill="#F8FAFC"/>
+  <rect x="24" y="24" width="792" height="512" rx="18" fill="#FFFFFF" stroke="#4F46E5" stroke-width="6"/>
+  <rect x="38" y="38" width="764" height="484" rx="12" fill="none" stroke="#06B6D4" stroke-width="2"/>
+  <circle cx="420" cy="96" r="32" fill="#4F46E5"/>
+  <text x="403" y="104" fill="#FFFFFF" font-family="sans-serif" font-size="22" font-weight="900">NX</text>
+  <text x="420" y="155" text-anchor="middle" fill="#0F172A" font-family="sans-serif" font-size="16" font-weight="800" letter-spacing="2">NEXUS INSTITUTE OF TECHNOLOGY &amp; TRAINING</text>
+  <text x="420" y="198" text-anchor="middle" fill="#4F46E5" font-family="sans-serif" font-size="32" font-weight="900">CERTIFICATE OF COMPLETION</text>
+  <text x="420" y="232" text-anchor="middle" fill="#64748B" font-family="sans-serif" font-size="14">This is to proudly certify that</text>
+  <text x="420" y="278" text-anchor="middle" fill="#0F172A" font-family="serif" font-style="italic" font-size="34" font-weight="bold">Alex Rivera</text>
+  <line x1="220" y1="292" x2="620" y2="292" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="420" y="324" text-anchor="middle" fill="#475569" font-family="sans-serif" font-size="14">has successfully completed all prescribed coursework, evaluations, and examinations for</text>
+  <text x="420" y="362" text-anchor="middle" fill="#4F46E5" font-family="sans-serif" font-size="22" font-weight="800">Enterprise Full-Stack Architecture with React 19 &amp; FastAPI</text>
+  <text x="420" y="395" text-anchor="middle" fill="#0F172A" font-family="sans-serif" font-size="13" font-weight="bold">Final Score: 98.0%   |   Grade Awarded: A+   |   Verified MySQL Record</text>
+  <!-- Footer Details -->
+  <text x="80" y="455" fill="#334155" font-family="monospace" font-size="12" font-weight="bold">Certificate No: CERT-2026-01005-170B9E</text>
+  <text x="80" y="475" fill="#64748B" font-family="monospace" font-size="11">Verification: NXV-AUTHENTIC-2026</text>
+  <circle cx="420" cy="462" r="36" fill="#ECFDF5" stroke="#16A34A" stroke-width="3"/>
+  <text x="420" y="459" text-anchor="middle" fill="#16A34A" font-family="sans-serif" font-size="10" font-weight="900">VERIFIED</text>
+  <text x="420" y="473" text-anchor="middle" fill="#16A34A" font-family="sans-serif" font-size="10" font-weight="900">AUTHENTIC</text>
+  <line x1="590" y1="458" x2="760" y2="458" stroke="#475569" stroke-width="1.5"/>
+  <text x="675" y="448" text-anchor="middle" fill="#0F172A" font-family="serif" font-style="italic" font-size="18" font-weight="bold">Dr. Eleanor Vance</text>
+  <text x="675" y="476" text-anchor="middle" fill="#475569" font-family="sans-serif" font-size="11" font-weight="bold">Director of Academic Affairs</text>
+</svg>

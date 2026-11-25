@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <linearGradient id="uxBg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#311042"/>
+      <stop offset="50%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#uxBg)"/>
+  <!-- Design System Component Cards -->
+  <rect x="65" y="70" width="340" height="305" rx="22" fill="#FFFFFF" fill-opacity="0.96"/>
+  <rect x="92" y="100" width="110" height="28" rx="8" fill="#4F46E5"/>
+  <rect x="214" y="100" width="110" height="28" rx="8" fill="#06B6D4"/>
+  <rect x="92" y="148" width="285" height="90" rx="14" fill="#F1F5F9"/>
+  <circle cx="132" cy="193" r="22" fill="#8B5CF6"/>
+  <rect x="170" y="176" width="160" height="12" rx="6" fill="#0F172A"/>
+  <rect x="170" y="198" width="110" height="10" rx="5" fill="#64748B"/>
+  <rect x="92" y="256" width="285" height="90" rx="14" fill="#EEF2FF" stroke="#C7D2FE"/>
+  <text x="115" y="295" fill="#4F46E5" font-family="sans-serif" font-size="16" font-weight="800">Tailwind CSS 4 + Motion</text>
+  <text x="115" y="320" fill="#475569" font-family="sans-serif" font-size="13">Linear &amp; Stripe Design Systems</text>
+  <!-- Right Title Block -->
+  <rect x="435" y="95" width="305" height="255" rx="22" fill="#0F172A" fill-opacity="0.86" stroke="#FFFFFF" stroke-opacity="0.25"/>
+  <text x="465" y="142" fill="#38BDF8" font-family="monospace" font-size="13" font-weight="bold">PRODUCT &amp; UI/UX ENGINEERING</text>
+  <text x="465" y="178" fill="#FFFFFF" font-family="sans-serif" font-size="22" font-weight="900">Design Systems &amp;</text>
+  <text x="465" y="206" fill="#FFFFFF" font-family="sans-serif" font-size="22" font-weight="900">SaaS Dashboards</text>
+  <text x="465" y="248" fill="#CBD5E1" font-family="sans-serif" font-size="13">• Accessible Component Architecture</text>
+  <text x="465" y="274" fill="#CBD5E1" font-family="sans-serif" font-size="13">• Interactive Recharts &amp; Motion</text>
+  <text x="465" y="300" fill="#CBD5E1" font-family="sans-serif" font-size="13">• Glassmorphism &amp; Dark/Light Tokens</text>
+  <text x="465" y="330" fill="#38BDF8" font-family="monospace" font-size="13" font-weight="bold">36 Hours • 6 Weeks • Portfolio</text>
+</svg>

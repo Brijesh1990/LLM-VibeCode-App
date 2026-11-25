@@ -2,7 +2,7 @@ export const APP_NAME = import.meta.env.VITE_APP_NAME || 'NexusLMS Enterprise';
 export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api/v1';
 export const BACKEND_ORIGIN = API_BASE_URL.startsWith('http')
   ? API_BASE_URL.replace(/\/api\/v1\/?$/, '')
-  : 'http://localhost:8000';
+  : (typeof window !== 'undefined' ? window.location.origin : '');
 
 export const ROLES = {
   ADMIN: 'admin',

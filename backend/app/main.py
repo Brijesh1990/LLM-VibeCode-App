@@ -88,6 +88,13 @@ try:
 except Exception as exc:
     logger.warning(f"Could not initialize upload directories or static mount: {exc}")
 
+# Auto-bootstrap tables and seed data for serverless/fresh databases
+try:
+    from app.database.bootstrap import ensure_database_ready
+    ensure_database_ready()
+except Exception as exc:
+    logger.warning(f"Startup DB bootstrap skipped: {exc}")
+
 
 @app.middleware("http")
 async def request_logging_middleware(request: Request, call_next):

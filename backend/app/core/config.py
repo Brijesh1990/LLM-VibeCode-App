@@ -66,7 +66,10 @@ class Settings(BaseSettings):
 
     @property
     def upload_dir(self) -> Path:
-        p = BASE_DIR / "uploads"
+        if os.environ.get("VERCEL") or os.environ.get("AWS_LAMBDA_FUNCTION_NAME"):
+            p = Path("/tmp") / "uploads"
+        else:
+            p = BASE_DIR / "uploads"
         p.mkdir(parents=True, exist_ok=True)
         return p
 

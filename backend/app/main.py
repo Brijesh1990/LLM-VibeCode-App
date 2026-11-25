@@ -81,10 +81,12 @@ app.add_middleware(
 )
 
 # Ensure upload folders exist and mount static files
-for folder in ("materials", "assignments", "submissions", "certificates", "receipts", "thumbnails"):
-    (settings.upload_dir / folder).mkdir(parents=True, exist_ok=True)
-
-app.mount("/uploads", StaticFiles(directory=str(settings.upload_dir)), name="uploads")
+try:
+    for folder in ("materials", "assignments", "submissions", "certificates", "receipts", "thumbnails"):
+        (settings.upload_dir / folder).mkdir(parents=True, exist_ok=True)
+    app.mount("/uploads", StaticFiles(directory=str(settings.upload_dir)), name="uploads")
+except Exception as exc:
+    logger.warning(f"Could not initialize upload directories or static mount: {exc}")
 
 
 @app.middleware("http")

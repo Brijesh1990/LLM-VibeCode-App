@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  cacheDir: 'D:/LLM-VibeCoding/frontend/.vite_cache',
   plugins: [
     react(),
     tailwindcss(),
